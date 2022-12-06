@@ -158,7 +158,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &145242140
 MeshRenderer:
->>>>>>> 9b60b44b589b426dfd5e8000859513f4c88b9efe
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -207,7 +206,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145242137}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> 9b60b44b589b426dfd5e8000859513f4c88b9efe
 --- !u!1 &190590985
 GameObject:
   m_ObjectHideFlags: 0
