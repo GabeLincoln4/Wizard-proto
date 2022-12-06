@@ -720,6 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grabSpell: {fileID: 5541896218572725064, guid: c5937ed4f3d919f4f8baf3b31b1f9c62, type: 3}
+  _player: {fileID: 1512547163}
   distance: 3
 --- !u!4 &862748780
 Transform:
