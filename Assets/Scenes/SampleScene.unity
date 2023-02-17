@@ -701,6 +701,7 @@ GameObject:
   - component: {fileID: 1512547165}
   - component: {fileID: 1512547164}
   - component: {fileID: 1512547166}
+  - component: {fileID: 1512547167}
   m_Layer: 0
   m_Name: First Person Player
   m_TagString: Untagged
@@ -757,3 +758,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _controller: {fileID: 1512547164}
   _speed: 12
+--- !u!114 &1512547167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512547163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f48a01bcb323594395d601f5abe0584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabSpell: {fileID: 5541896218572725064, guid: c5937ed4f3d919f4f8baf3b31b1f9c62, type: 3}
+  spawnDistance: 5

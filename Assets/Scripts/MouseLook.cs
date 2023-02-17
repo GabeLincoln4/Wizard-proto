@@ -31,7 +31,6 @@ public class MouseLook : MonoBehaviour
     private void RotateAroundLocalXAxis(float inputY)
     {
         
-        
         cameraVerticalRotation -= _inputY;
         cameraVerticalRotation = Mathf.Clamp(cameraVerticalRotation, -90f, 90f);
         transform.localEulerAngles = Vector3.right * cameraVerticalRotation;
