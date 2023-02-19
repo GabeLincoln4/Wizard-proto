@@ -8,18 +8,16 @@ public class GrabSpellSpawner : MonoBehaviour
     [SerializeField] private float spawnDistance = 10f;
     private Vector3 spawnPos;
     private bool isCasting;
+    private PlayerMovement _playerMovement;
     
-    
-
     void Awake()
     {
-        
-        
+        _playerMovement = GetComponent<PlayerMovement>();
     }
 
     void Update()
     {
-        spawnPos = transform.position + transform.forward * spawnDistance;
+        spawnPos = transform.position + transform.up + transform.right + transform.forward * spawnDistance;
 
         if (Input.GetButton("Jump") && !isCasting)
         {
@@ -32,8 +30,10 @@ public class GrabSpellSpawner : MonoBehaviour
     IEnumerator GrabSpellCoroutine()
     {
         Debug.Log("Grab Spell delay started");
+        _playerMovement.enabled = false;
         yield return new WaitForSeconds(3);
         Debug.Log("Grab Spell delay ended");
+        _playerMovement.enabled = true;
         isCasting = false;
     }
 }

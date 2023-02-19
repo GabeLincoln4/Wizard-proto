@@ -770,5 +770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f48a01bcb323594395d601f5abe0584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _caster: {fileID: 1512547163}
   _grabSpell: {fileID: 5541896218572725064, guid: c5937ed4f3d919f4f8baf3b31b1f9c62, type: 3}
   spawnDistance: 5
