@@ -17,7 +17,7 @@ public class GrabSpellSpawner : MonoBehaviour
 
     void Update()
     {
-        spawnPos = transform.position + transform.up + transform.right + transform.forward * spawnDistance;
+        spawnPos = transform.position + transform.up + (transform.right * 2) + transform.forward * spawnDistance;
 
         if (Input.GetButton("Jump") && !isCasting)
         {
