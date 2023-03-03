@@ -9,6 +9,7 @@ public class GrabSpellMovement : MonoBehaviour
     private float _fractionOfTheWay;
     [SerializeField] float _destructionDelay;
     [SerializeField] float _spellDistance;
+    [SerializeField] float _spellIdleDuration;
     private BoxCollider _boxCollider;
 
     void Awake()
@@ -36,7 +37,7 @@ public class GrabSpellMovement : MonoBehaviour
     IEnumerator SpellMovementDelay()
     {
         _boxCollider.enabled = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(_spellIdleDuration);
         _boxCollider.enabled = true;
         _fractionOfTheWay += 0.01f;
         transform.position = Vector3.Lerp(_startPos, _endPos, _fractionOfTheWay);

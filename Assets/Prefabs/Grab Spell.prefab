@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destructionDelay: 1.5
   _spellDistance: -4
+  _spellIdleDuration: 0.5
 --- !u!65 &2677460875055511773
 BoxCollider:
   m_ObjectHideFlags: 0
