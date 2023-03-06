@@ -4,28 +4,22 @@ using UnityEngine;
 
 public class RogueCaster : MonoBehaviour
 {
-    [SerializeField] private GameObject _enemySpell;
-    [SerializeField] private float _fireRate;
-    private float _nextFire;
+    private MeshRenderer _meshRenderer;
+    [SerializeField] private EnemySpellSpawner _enemySpellSpawner;
 
     void Start()
     {
-        _nextFire = Time.time;
-        transform.localPosition = new Vector3(0, .5f, 0);
+        _meshRenderer = GetComponent<MeshRenderer>();
+        _enemySpellSpawner = _enemySpellSpawner.GetComponent<EnemySpellSpawner>();
     }
 
     void Update()
     {
-        CheckIfTimeToFire(); 
+        // if (_enemySpellSpawner._readyToFire == true)
+        // {
+        //     Debug.Log("Caster is ready to fire"); 
+        //     _meshRenderer.material.SetColor("_Color", Color.red);
+        //     StartCoroutine(TurnRogueCasterBlue());
+        // }
     }
-
-    private void CheckIfTimeToFire()
-    {
-        if (Time.time > _nextFire)
-        {
-            Instantiate(_enemySpell, transform.position, Quaternion.identity);
-            _nextFire = Time.time + _fireRate;
-        }
-    }
-
 }
