@@ -1267,9 +1267,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isCasting: 0
   _grabSpell: {fileID: 5541896218572725064, guid: c5937ed4f3d919f4f8baf3b31b1f9c62, type: 3}
+  _isCaught: 0
   spawnDistance: 5
   _grabSpellDuration: 2
-  _isCaught: 0
 --- !u!114 &1512547168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1449,3 +1449,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b0e00de70eff8479dd8323a9a61c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &3370988567815168863
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3370988567565563419, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370988567565563419, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.266226
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370988567565563419, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370988567565563419, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.716785
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370988567565563419, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370988567565563419, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370988567565563419, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370988567565563419, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370988567565563419, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370988567565563419, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370988567565563419, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370988567565563421, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}
+      propertyPath: m_Name
+      value: Spell Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 538e588a96ca60e43ac5453a01b16be5, type: 3}

@@ -15,10 +15,12 @@ public class GrabSpellMovement : MonoBehaviour
     [SerializeField] float _spellIdleDuration;
     private BoxCollider _boxCollider;
     private GameObject _projectileSlot;
+    private PlayerSpellSpawner _playerSpellSpawner;
 
     void Awake()
     {
         _boxCollider = GetComponent<BoxCollider>();
+        _playerSpellSpawner = GameObject.Find("First Person Player").GetComponentInChildren<PlayerSpellSpawner>();
     }
 
     void Start()
@@ -34,7 +36,7 @@ public class GrabSpellMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _capturedSpell = other.gameObject;
+        _playerSpellSpawner._projectile = other.gameObject;
     }
 
     IEnumerator SpellMovementDelay()
