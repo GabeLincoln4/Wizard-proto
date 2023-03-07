@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerSpellSpawner : MonoBehaviour
 {
+    public GameObject _projectile;
+
     [SerializeField] private float _fireDelta = 0.5f;
     [SerializeField] private Camera _cam;
-    [SerializeField] private GameObject _projectile;
     [SerializeField] private Transform _LHFirePoint, _RHFirePoint;
     [SerializeField] private float _projectileSpeed = 30;
+    [SerializeField] private bool _otherSpellIsBeingCast = false;
 
     private float _nextFire = 0.5f;
     private GameObject _newAttackSpell;
@@ -24,9 +26,7 @@ public class PlayerSpellSpawner : MonoBehaviour
 
     void Update()
     {
-        _myTime = _myTime + Time.deltaTime;
-
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !_otherSpellIsBeingCast)
         {
             ShootProjectile();
         }
@@ -57,7 +57,18 @@ public class PlayerSpellSpawner : MonoBehaviour
 
     private void InstantiateProjectile(Transform firePoint)
     {
+        var capturedSpell = GetComponentInParent<GrabSpellSpawner>()._grabSpell.GetComponent<GrabSpellMovement>()._capturedSpell;
+        if(capturedSpell != null)
+        {
+            _projectile = capturedSpell;
+        }
+
         var projectileObj = Instantiate(_projectile, firePoint.position, Quaternion.identity) as GameObject;
         projectileObj.GetComponent<Rigidbody>().velocity = (_destination - firePoint.position).normalized * _projectileSpeed;
+    }
+
+    private void DetectOtherSpell()
+    {
+        _otherSpellIsBeingCast = GetComponentInParent<GrabSpellSpawner>()._isCasting;
     }
 }

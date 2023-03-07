@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GrabSpellMovement : MonoBehaviour
 {
+    public GameObject _capturedSpell = null;
+    public bool _spellCaught = false;
+
     private Vector3 _startPos;
     private Vector3 _endPos;
     private float _fractionOfTheWay;
@@ -11,6 +14,7 @@ public class GrabSpellMovement : MonoBehaviour
     [SerializeField] float _spellDistance;
     [SerializeField] float _spellIdleDuration;
     private BoxCollider _boxCollider;
+    private GameObject _projectileSlot;
 
     void Awake()
     {
@@ -30,8 +34,7 @@ public class GrabSpellMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Grab spell has touched enemy spell");
-        Destroy(other.gameObject);
+        _capturedSpell = other.gameObject;
     }
 
     IEnumerator SpellMovementDelay()

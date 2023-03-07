@@ -8,4 +8,9 @@ public class AttackSpell : MonoBehaviour
     {
         Debug.Log("Attack Spell Instantiated");
     }
+
+    private void Update()
+    {
+        Destroy(gameObject, 5f);
+    }
 }

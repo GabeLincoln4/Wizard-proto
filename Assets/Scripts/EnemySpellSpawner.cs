@@ -9,6 +9,7 @@ public class EnemySpellSpawner : MonoBehaviour
     [SerializeField] private float _telegraphDuration;
     private Material _material;
     [SerializeField] private GameObject _currentTarget;
+    [SerializeField] private float _projectileSpeed;
     private float _nextFire;
     private MeshRenderer _meshRenderer;
     [SerializeField] private bool _isTelegraphing = false;
@@ -45,7 +46,8 @@ public class EnemySpellSpawner : MonoBehaviour
         yield return new WaitForSeconds(_telegraphDuration);
         _material.SetColor("_Color", Color.blue);
         _isTelegraphing = false;
-        Instantiate(_enemySpell, transform.position, Quaternion.identity);
+        var projectileObj = Instantiate(_enemySpell, transform.position, Quaternion.identity);
+        projectileObj.GetComponent<Rigidbody>().velocity = (_currentTarget.transform.position - transform.position).normalized * _projectileSpeed;
         _nextFire = Time.time + _fireRate;
     }
 }
