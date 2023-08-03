@@ -6,6 +6,7 @@ public class RogueCaster : MonoBehaviour
 {
     private MeshRenderer _meshRenderer;
     [SerializeField] private EnemySpellSpawner _enemySpellSpawner;
+    [SerializeField] private bool _spellSpawnToggle;
 
     void Start()
     {

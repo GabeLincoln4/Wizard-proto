@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemySpell : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed = 30f;
     private Rigidbody _rigidbody;
     private Vector3 _moveDirection;
     public GameObject _target;

@@ -536,12 +536,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3dcf1f337a85949942d6f164e7b52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectile: {fileID: 2089332477531352950, guid: a56eaaa7d1bf2b04597087073d8dfe10, type: 3}
-  _fireDelta: 0.5
+  _projectile: {fileID: 4628440125628191016, guid: 1fe50f17e73a3034abc8e54652c9f0e3, type: 3}
   _cam: {fileID: 213516667}
   _LHFirePoint: {fileID: 2033208631}
   _RHFirePoint: {fileID: 167041280}
-  _projectileSpeed: 30
+  _projectileSpeed: 0
   _otherSpellIsBeingCast: 0
 --- !u!1 &535790838
 GameObject:
@@ -778,6 +777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpellSpawner: {fileID: 1674005968}
+  _spellSpawnToggle: 1
 --- !u!136 &589015063
 CapsuleCollider:
   m_ObjectHideFlags: 0
