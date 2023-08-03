@@ -52,6 +52,7 @@ MonoBehaviour:
   _spellDistance: -4
   _spellIdleDuration: 0.5
   _collisionReactionDebugger: 0
+  _playerScanner: 0
 --- !u!65 &2677460875055511773
 BoxCollider:
   m_ObjectHideFlags: 0

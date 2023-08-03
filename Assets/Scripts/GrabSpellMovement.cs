@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GrabSpellMovement : MonoBehaviour
 {
+    private FirstPersonPlayer _firstPersonPlayer;
     public GameObject _capturedSpell = null;
     public bool _spellCaught = false;
 
@@ -14,18 +15,21 @@ public class GrabSpellMovement : MonoBehaviour
     [SerializeField] float _spellDistance;
     [SerializeField] float _spellIdleDuration;
     [SerializeField] private bool _collisionReactionDebugger = false;
+    [SerializeField] private bool _playerScanner = false;
     private BoxCollider _boxCollider;
     private GameObject _projectileSlot;
 
     void Awake()
     {
         _boxCollider = GetComponent<BoxCollider>();
+        _firstPersonPlayer = GameObject.Find("First Person Player").GetComponent<FirstPersonPlayer>();
     }
 
     void Start()
     {
         _startPos = transform.position;
         _endPos =  transform.position + (transform.right * _spellDistance);
+        ScanForPlayer();
     }
 
     void Update()
@@ -62,5 +66,11 @@ public class GrabSpellMovement : MonoBehaviour
             Debug.Log(other.gameObject);
         }
         
+        _firstPersonPlayer._caughtSpellSlot = other.gameObject;
+    }
+
+    private void ScanForPlayer()
+    {
+        Debug.Log(_firstPersonPlayer);
     }
 }
