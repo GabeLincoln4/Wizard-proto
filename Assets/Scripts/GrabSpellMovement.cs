@@ -13,6 +13,7 @@ public class GrabSpellMovement : MonoBehaviour
     [SerializeField] float _destructionDelay;
     [SerializeField] float _spellDistance;
     [SerializeField] float _spellIdleDuration;
+    [SerializeField] private bool _collisionReactionDebugger = false;
     private BoxCollider _boxCollider;
     private GameObject _projectileSlot;
 
@@ -34,7 +35,7 @@ public class GrabSpellMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _capturedSpell = other.gameObject;
+        CollisionReaction(other);
     }
 
     IEnumerator SpellMovementDelay()
@@ -52,5 +53,14 @@ public class GrabSpellMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
+    }
+
+    private void CollisionReaction(Collider other)
+    {
+        if(_collisionReactionDebugger)
+        {
+            Debug.Log(other.gameObject);
+        }
+        
     }
 }

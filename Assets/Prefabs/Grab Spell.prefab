@@ -46,9 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eeb31349e993c840b5e2aed491d473f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _capturedSpell: {fileID: 0}
+  _spellCaught: 0
   _destructionDelay: 1.5
   _spellDistance: -4
   _spellIdleDuration: 0.5
+  _collisionReactionDebugger: 0
 --- !u!65 &2677460875055511773
 BoxCollider:
   m_ObjectHideFlags: 0
