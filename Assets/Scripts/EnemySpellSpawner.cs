@@ -33,7 +33,7 @@ public class EnemySpellSpawner : MonoBehaviour
 
     private void CheckIfTimeToFire()
     {
-        if ((Time.time > _nextFire) && !_isTelegraphing)
+        if ((Time.time > _nextFire) && !_isTelegraphing && _leverIsActive)
         {
             StartCoroutine(TurnRogueCasterBlue());
         }
@@ -41,13 +41,18 @@ public class EnemySpellSpawner : MonoBehaviour
 
     IEnumerator TurnRogueCasterBlue()
     {
-        _material.SetColor("_Color", Color.red);
+        SetColor("_Color", Color.red);
         _isTelegraphing = true;
         yield return new WaitForSeconds(_telegraphDuration);
-        _material.SetColor("_Color", Color.blue);
+        SetColor("_Color", Color.blue);
         _isTelegraphing = false;
         var projectileObj = Instantiate(_enemySpell, transform.position, Quaternion.identity);
         projectileObj.GetComponent<Rigidbody>().velocity = (_currentTarget.transform.position - transform.position).normalized * _projectileSpeed;
         _nextFire = Time.time + _fireRate;
+    }
+
+    private void SetColor(string materialType, Color color)
+    {
+        _material.SetColor(materialType, color);
     }
 }
