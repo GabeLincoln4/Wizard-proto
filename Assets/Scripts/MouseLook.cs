@@ -6,7 +6,9 @@ public class MouseLook : MonoBehaviour
 {
     [SerializeField] private float _mouseSensitivity = 100f;
     [SerializeField] private Transform _playerBody;
-    private float _xRotation = 0f;
+    private float _inputX = 0f;
+    private float _inputY = 0f;
+    private float cameraVerticalRotation = 0f;
 
     void Start()
     {
@@ -15,13 +17,28 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Time.deltaTime;
+        CollectMouseInput(); 
+        RotateAroundLocalXAxis(_inputY);
+        RotatePlayerAndCameraAroundYAxis(_inputX, _playerBody);
+    }
 
-        _xRotation -= mouseY;
-        _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+    private void CollectMouseInput()
+    {
+        _inputX = Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
+        _inputY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Time.deltaTime;
+    }
 
-        transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
-        _playerBody.Rotate(Vector3.up * mouseX);
+    private void RotateAroundLocalXAxis(float inputY)
+    {
+        
+        cameraVerticalRotation -= _inputY;
+        cameraVerticalRotation = Mathf.Clamp(cameraVerticalRotation, -90f, 90f);
+        transform.localEulerAngles = Vector3.right * cameraVerticalRotation;
+        
+    }
+
+    private void RotatePlayerAndCameraAroundYAxis(float inputX, Transform playerBody)
+    {
+        playerBody.Rotate(Vector3.up * inputX);
     }
 }
