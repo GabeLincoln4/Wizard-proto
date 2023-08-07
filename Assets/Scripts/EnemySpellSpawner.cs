@@ -8,6 +8,8 @@ public class EnemySpellSpawner : MonoBehaviour
     [SerializeField] private float _fireRate;
     [SerializeField] private float _telegraphDuration;
     private Material _material;
+    private RogueCaster _rogueCaster;
+    private bool _casterLeverIsActive;
     [SerializeField] private GameObject _currentTarget;
     [SerializeField] private float _projectileSpeed;
     private float _nextFire;
@@ -18,6 +20,7 @@ public class EnemySpellSpawner : MonoBehaviour
     {
         _material = GetComponentInParent<MeshRenderer>().material;
         _enemySpell.GetComponent<EnemySpell>()._target = _currentTarget;
+        //_casterLeverIsActive = _rogueCaster.GetComponent<RogueCaster>()._leverIsActive;
     }
 
     void Start()
@@ -33,7 +36,7 @@ public class EnemySpellSpawner : MonoBehaviour
 
     private void CheckIfTimeToFire()
     {
-        if ((Time.time > _nextFire) && !_isTelegraphing && _leverIsActive)
+        if ((Time.time > _nextFire) && !_isTelegraphing)
         {
             StartCoroutine(TurnRogueCasterBlue());
         }
