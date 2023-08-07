@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c919e14592747594da9c05ec67c3f0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpellSpawner: {fileID: 1674005968}
+  _leverManager: {fileID: 11400000, guid: 3ac59730e5f676e4bbe91295e2b8e8ae, type: 2}
 --- !u!136 &589015063
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1267,9 +1267,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isCasting: 0
   _grabSpell: {fileID: 5541896218572725064, guid: c5937ed4f3d919f4f8baf3b31b1f9c62, type: 3}
+  _isCaught: 0
   spawnDistance: 5
   _grabSpellDuration: 2
-  _isCaught: 0
 --- !u!114 &1512547168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,6 +1282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75059fba905ab3744b0900f9ec9f633c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _caughtSpellSlot: {fileID: 0}
 --- !u!1 &1674005966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,12 +1327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f59ece0a3a56d40a36bab0655852b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpell: {fileID: 3718556014475843951, guid: 0e76e918a692ce14f8e38fb1da3660cb, type: 3}
-  _fireRate: 3
-  _telegraphDuration: 1
-  _currentTarget: {fileID: 213516664}
-  _projectileSpeed: 5
-  _isTelegraphing: 0
+  _spellSpawner: {fileID: 11400000, guid: ef1f2f496be1c2245b8f5736a067c137, type: 2}
 --- !u!1 &1739927586
 GameObject:
   m_ObjectHideFlags: 0
