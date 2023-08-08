@@ -11,4 +11,9 @@ public class EnemySpellSpawner : MonoBehaviour
     private MeshRenderer _meshRenderer;
     private LeverManager _leverManager;
     [SerializeField] private SpellSpawner _spellSpawner;
+
+    private void CreateSpell(GameObject spell, float distanceFromCaster, float rateOfCreation)
+    {
+        
+    }
 }
