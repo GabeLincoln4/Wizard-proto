@@ -5,7 +5,7 @@ using UnityEngine;
 public class RogueCaster : MonoBehaviour
 {
     private MeshRenderer _meshRenderer;
-    [SerializeField] private EnemySpellSpawner _enemySpellSpawner;
+    [SerializeField] LeverManager _leverManager;
 
     private bool _isPoisoned = false;
     private float _elapsed;
@@ -21,7 +21,6 @@ public class RogueCaster : MonoBehaviour
     void Start()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
-        _enemySpellSpawner = _enemySpellSpawner.GetComponent<EnemySpellSpawner>();
     }
 
     void Update()
